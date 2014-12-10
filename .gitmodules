@@ -1,6 +1,0 @@
-[submodule "jni"]
-	path = jni
-	url = git@github.com:google/leveldb.git
-[submodule "leveldb"]
-	path = leveldb
-	url = git@github.com:google/leveldb.git
