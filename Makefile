@@ -5,4 +5,4 @@ all:
 	${NDK_BUILD}
 
 clean:
-	${NDK_BUILD} clean 
+	rm -rf obj libs/*
