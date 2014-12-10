@@ -1,0 +1,3 @@
+[submodule "jni/leveldb"]
+	path = leveldb
+	url = git@github.com:google/leveldb.git
