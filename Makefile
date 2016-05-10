@@ -1,4 +1,4 @@
-NDK_HOME=~/android-ndk-r10d
+NDK_HOME=~/Desktop/ndk/android-ndk-r11c
 NDK_BUILD=${NDK_HOME}/ndk-build APP_BUILD_SCRIPT=Android.mk NDK_APPLICATION_MK=Application.mk NDK_PROJECT_PATH=.
 
 all: ./staticLibs/armeabi/libleveldb.a ./staticLibs/armeabi-v7a/libleveldb.a ./staticLibs/x86/libleveldb.a ./staticLibs/x86_64/libleveldb.a
