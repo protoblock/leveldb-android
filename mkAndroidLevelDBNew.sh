@@ -76,6 +76,21 @@ cd /tmp/leveldb-android/leveldb
 $NDK_HOME/ndk-build 
 
 
+
+# FIXME. Inspect the library architecture specific information
+arm-linux-androideabi-readelf -A /tmp/leveldb-android/leveldb/obj/local/armeabi-v7a/libleveldb.a
+
+
+for i in ${PREFIX}/lib/armeabi ${PREFIX}/lib/rmeabi-v7a ${PREFIX}/lib/x86 ${PREFIX}/lib/x86_64;
+do 
+	mkdir $i;
+done
+
+cp /tmp/leveldb-android/leveldb/obj/local/armeabi/libleveldb.a ${PREFIX}/lib/armeabi/
+cp /tmp/leveldb-android/leveldb/obj/local/armeabi-v7a/libleveldb.a ${PREFIX}/lib/rmeabi-v7a/
+cp /tmp/leveldb-android/leveldb/obj/local/x86/libleveldb.a ${PREFIX}/lib/x86/
+cp /tmp/leveldb-android/leveldb/obj/local/x86_64/libleveldb.a ${PREFIX}/lib/x86_64/
+
 cp -r /tmp/leveldb-android/leveldb/libs/ ${PREFIX}/lib
-cp -r /tmp/leveldb-android/leveldb/include ${PREFIX}/include
+cp -r /tmp/leveldb-android/leveldb/include ${PREFIX}/
 
