@@ -29,13 +29,13 @@ if [ -d $HOME/Desktop/ndk/android-ndk-r11c ];
 	fi
 
 
-NDK_ROOT=$HOME/Desktop/ndk/android-ndk-r11c
-export ANDROID_NDK_ROOT=$NDK_ROOT
-export PATH=$NDK_ROOT/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/:$PATH
-export SYSROOT=$NDK_ROOT/platforms/android-24/arch-arm/
+NDK_HOME=$HOME/Desktop/ndk/android-ndk-r11c
+export ANDROID_NDK_ROOT=$NDK_HOME
+export PATH=$NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/:$PATH
+export SYSROOT=$NDK_HOME/platforms/android-24/arch-arm/
 export CC="arm-linux-androideabi-gcc --sysroot $SYSROOT"
 export CXX="arm-linux-androideabi-g++ --sysroot $SYSROOT"
-export CXXSTL=$NDK_ROOT/sources/cxx-stl/gnu-libstdc++/4.9/
+export CXXSTL=$NDK_HOME/sources/cxx-stl/gnu-libstdc++/4.9/
 
 
 
@@ -59,7 +59,8 @@ export NDK_PROJECT_PATH=/tmp/leveldb-android/leveldb
 
 
 
-$NDK_ROOT/ndk-build 
+$NDK_HOME/ndk-build 
+
 
 #cp -r /tmp/leveldb-android/libs/ ${PREFIX}/lib
 #cp -r /tmp/leveldb-android/include ${PREFIX}/include
