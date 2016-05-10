@@ -1,4 +1,15 @@
 #!/bin/bash
+#
+#
+# 88""Yb 88""Yb  dP"Yb  888888  dP"Yb  88""Yb 88      dP"Yb   dP""b8 88  dP 
+# 88__dP 88__dP dP   Yb   88   dP   Yb 88__dP 88     dP   Yb dP   `" 88odP  
+# 88"""  88"Yb  Yb   dP   88   Yb   dP 88""Yb 88  .o Yb   dP Yb      88"Yb  
+# 88     88  Yb  YbodP    88    YbodP  88oodP 88ood8  YbodP   YboodP 88  Yb                                                                                                                       '                   
+#
+# 080 114 111 116 111 098 108 111 099 107
+# 01010000 01110010 01101111 01110100 01101111 01000010 01101100 01101111 01100011 01101011
+#
+# contact@protoblock.com
 
 
 PREFIX=$HOME/bin/leveldb/android/
@@ -54,14 +65,17 @@ git clone https://github.com/protoblock/leveldb-android.git
 cd leveldb-android/
 git submodule update --recursive
 git clone https://github.com/google/leveldb.git
+cd /tmp/leveldb-android/leveldb
+git reset --hard 803d69203a62faf50f1b77897310a3a1fcae712b
+## git pull
 
-export NDK_PROJECT_PATH=/tmp/leveldb-android/leveldb
-
-
-
+mkdir -p /tmp/leveldb-android/leveldb/jni/
+cp /tmp/leveldb-android/Android.mk /tmp/leveldb-android/leveldb/jni/
+cp /tmp/leveldb-android/Application.mk /tmp/leveldb-android/leveldb/jni/
+cd /tmp/leveldb-android/leveldb
 $NDK_HOME/ndk-build 
 
 
-#cp -r /tmp/leveldb-android/libs/ ${PREFIX}/lib
-#cp -r /tmp/leveldb-android/include ${PREFIX}/include
+cp -r /tmp/leveldb-android/leveldb/libs/ ${PREFIX}/lib
+cp -r /tmp/leveldb-android/leveldb/include ${PREFIX}/include
 
